@@ -1,16 +1,127 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+:root {
+  --v-color: #fff;
+  font-family: 'Rubik', sans-serif;
+}
+/* UTILS */
+.container {
+  width: min(90ch, 100vw - 2rem);
+  margin-inline: auto;
+}
+.semibold {
+  font-weight: 600;
+}
+
+/* LOADER */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  border: 5px solid rgb(53, 9, 155);
+  border-bottom: 5px solid transparent;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.loader-frame {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* CHARACTER GRID */
+/* .character-grid > * + * {
+  margin-top: 1rem;
+}
+
+.character-grid {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .character-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .character-grid > * + * {
+    margin-top: 0;
+  }
+} */
+.masonry {
+  margin-inline: auto;
+}
+/* QUICK VIEW */
+.quick-view {
+  margin-bottom: 0.35rem;
+  width: min(18.625rem, 90vw);
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--v-color); */
+  padding: 1rem;
+  align-items: center;
+  border-radius: 1%;
+  box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
-a {
+.avatar {
+  border-radius: 50%;
+}
+
+.quick-info {
+  margin-top: 1rem;
+}
+.quick-info h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.quick-info a,
+.quick-info a:visited {
   color: inherit;
-  text-decoration: none;
+  transition: color 200ms ease-in-out;
 }
 
-* {
-  box-sizing: border-box;
+.quick-info a:hover {
+  color: blue;
+}
+
+.character-view {
+  min-height: 100vh;
+  padding-block: 1rem;
+}
+.character-view > .container {
+  display: flex;
+  flex-direction: column;
+}
+.character-view a {
+  align-self: flex-end;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  transition: background-color 2500ms ease-in-out;
+  transition: color 250ms ease-in-out;
+}
+.character-view a:hover {
+  background-color: black;
+  border: 2px solid black;
+  color: white;
 }

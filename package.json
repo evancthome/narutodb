@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "graphql-request": "^4.0.0",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-infinite-scroller": "^1.2.5",
+    "react-masonry-infinite": "^1.2.2",
+    "react-query": "^3.34.16",
+    "react-responsive-masonry": "^2.1.4"
   },
   "devDependencies": {
     "eslint": "8.10.0",
