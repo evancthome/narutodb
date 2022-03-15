@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
 :root {
-  --v-color: #fff;
   font-family: 'Rubik', sans-serif;
 }
 /* UTILS */
@@ -11,6 +10,14 @@
 }
 .semibold {
   font-weight: 600;
+}
+
+body {
+  background-color: #ee3a3a;
+}
+
+h1 {
+  color: white;
 }
 
 /* LOADER */
@@ -41,44 +48,38 @@
   justify-content: center;
   align-items: center;
 }
-/* CHARACTER GRID */
-/* .character-grid > * + * {
-  margin-top: 1rem;
+
+input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
-.character-grid {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Dropdown-root {
+  margin-bottom: 1rem;
 }
-@media (min-width: 800px) {
-  .character-grid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: start;
-    justify-content: center;
-    gap: 2rem;
-  }
-  .character-grid > * + * {
-    margin-top: 0;
-  }
-} */
-.masonry {
-  margin-inline: auto;
+
+/* CHARACTER GRID */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(18.625rem, 90vw));
+  gap: 0.5rem;
+  justify-content: center;
 }
 /* QUICK VIEW */
 .quick-view {
-  margin-bottom: 0.35rem;
   width: min(18.625rem, 90vw);
   display: flex;
   flex-direction: column;
-  /* background-color: var(--v-color); */
   padding: 1rem;
   align-items: center;
   border-radius: 1%;
   box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  cursor: pointer;
+  transition: filter 100ms ease-in-out;
+}
+.quick-view:hover {
+  filter: saturate(150%);
 }
 
 .avatar {
@@ -88,6 +89,7 @@
 .quick-info {
   margin-top: 1rem;
 }
+
 .quick-info h3 {
   font-weight: 700;
   font-size: 1.2rem;
@@ -97,14 +99,31 @@
   color: inherit;
   transition: color 200ms ease-in-out;
 }
-
 .quick-info a:hover {
   color: blue;
 }
 
+.load-more {
+  background-color: white;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  padding: 0.25em 0.5em;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  margin-inline: auto;
+  cursor: pointer;
+}
+
+/* CHARACTER VIEW */
 .character-view {
   min-height: 100vh;
   padding-block: 1rem;
+}
+.character-view p:last-child {
+  margin-top: 1rem;
 }
 .character-view > .container {
   display: flex;

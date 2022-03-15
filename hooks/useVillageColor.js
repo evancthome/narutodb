@@ -24,8 +24,8 @@ function useVillageColor(village) {
       return '#D5F6F1'
     case 'whirling tides village':
       return '#56CAF8'
-    case 'unknown':
-      return '#FFFFFF'
+    case '':
+      return '#ffffff'
   }
 }
 

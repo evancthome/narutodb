@@ -6,6 +6,7 @@ import useVillageColor from '../../hooks/useVillageColor'
 import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../../components/Loader'
+import he from 'he'
 
 function Character() {
   const router = useRouter()
@@ -13,7 +14,7 @@ function Character() {
 
   const endpoint = 'https://narutoql.up.railway.app/graphql/'
 
-  const { data, isLoading } = useQuery(id, () =>
+  const { data, isLoading } = useQuery(['character', id], () =>
     request(
       endpoint,
       gql`
@@ -68,22 +69,22 @@ function Character() {
             {data.character.notableFeatures ? (
               <p>
                 <span className='semibold'>Notable Features: </span>
-                {data.character.notableFeatures}
+                {he.decode(data.character.notableFeatures)}
               </p>
             ) : null}
-            <p>{data.character.description}</p>
             {data.character.nameMeaning ? (
               <p>
                 <span className='semibold'>Meaning of name:</span>{' '}
-                {data.character.nameMeaning}
+                {he.decode(data.character.nameMeaning)}
               </p>
             ) : null}
             {data.character.notableQuotes ? (
               <p>
                 <span className='semibold'>Notable Quotes:</span>{' '}
-                {data.character.notableQuotes}
+                {he.decode(data.character.notableQuotes)}
               </p>
             ) : null}
+            <p>{he.decode(data.character.description)}</p>
           </div>
         </div>
       ) : (
