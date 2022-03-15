@@ -1,4 +1,4 @@
-function useVillageColor(village) {
+function villageColor(village) {
   switch (village) {
     case 'leaf village':
       return '#94fc9d'
@@ -29,4 +29,4 @@ function useVillageColor(village) {
   }
 }
 
-export default useVillageColor
+export default villageColor

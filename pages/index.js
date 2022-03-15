@@ -6,7 +6,7 @@ import 'react-dropdown/style.css'
 import Loader from '../components/Loader'
 import QuickView from '../components/QuickView'
 import { useState, useEffect, useRef } from 'react'
-import useCapitalize from '../hooks/useCapitalize'
+import capitalize from '../functions/capitalize'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 
 export default function Home() {
@@ -19,21 +19,21 @@ export default function Home() {
 
   const villages = [
     { label: 'All Villages', value: '' },
-    { label: useCapitalize('cloud village'), value: 'cloud village' },
+    { label: capitalize('cloud village'), value: 'cloud village' },
     {
-      label: useCapitalize('hot springs village'),
+      label: capitalize('hot springs village'),
       value: 'hot springs village',
     },
-    { label: useCapitalize('leaf village'), value: 'leaf village' },
-    { label: useCapitalize('mist village'), value: 'mist village' },
-    { label: useCapitalize('rain village'), value: 'rain village' },
-    { label: useCapitalize('sand village'), value: 'sand village' },
-    { label: useCapitalize('sound village'), value: 'sound village' },
-    { label: useCapitalize('star village'), value: 'star village' },
-    { label: useCapitalize('rock village'), value: 'rock village' },
-    { label: useCapitalize('waterfall village'), value: 'waterfall village' },
+    { label: capitalize('leaf village'), value: 'leaf village' },
+    { label: capitalize('mist village'), value: 'mist village' },
+    { label: capitalize('rain village'), value: 'rain village' },
+    { label: capitalize('sand village'), value: 'sand village' },
+    { label: capitalize('sound village'), value: 'sound village' },
+    { label: capitalize('star village'), value: 'star village' },
+    { label: capitalize('rock village'), value: 'rock village' },
+    { label: capitalize('waterfall village'), value: 'waterfall village' },
     {
-      label: useCapitalize('whirling tides village'),
+      label: capitalize('whirling tides village'),
       value: 'whirling tides village',
     },
 

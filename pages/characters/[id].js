@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { request, gql } from 'graphql-request'
 import { useQuery } from 'react-query'
-import useCapitalize from '../../hooks/useCapitalize'
-import useVillageColor from '../../hooks/useVillageColor'
+import capitalize from '../../functions/capitalize'
+import villageColor from '../../functions/villageColor'
 import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../../components/Loader'
@@ -41,7 +41,7 @@ function Character() {
         <div
           className='character-view'
           style={{
-            background: useVillageColor(data.character.village),
+            background: villageColor(data.character.village),
           }}
         >
           <div className='container'>
@@ -52,10 +52,13 @@ function Character() {
               width='150px'
               height='150px'
               src={data.character.avatarSrc}
+              alt={`${data.character.name} Avatar`}
             />
             <h2>{data.character.name}</h2>
-            <p className='semibold'>{useCapitalize(data.character.village)}</p>
-            <p className='semibold'>
+            <p style={{ fontSize: '1.2rem' }} className='semibold'>
+              {capitalize(data.character.village)}
+            </p>
+            <p style={{ fontSize: '1.2rem' }} className='semibold'>
               {data.character.rank === 'Unknown'
                 ? `${data.character.rank} Rank`
                 : data.character.rank}
